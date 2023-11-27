@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+.video-cont {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.action-cont {
+    height: 12rem;
+    width: 5rem;
+    position: absolute;
+    top: calc((100vh - 12rem) / 2);
+    right: 10rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+.action-cont > * {
+    width: 100%;
+    height: 5rem;
+
+    background-color: black;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: grid;
+    place-items: center;
+}
+
+.record-btn {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: red;
+}
+.capture-btn {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: white;
+}
+.scale-record {
+    animation: zoomInZoomOut 1s infinite alternate;
+}
+.scale-capture {
+    animation: zoomInZoomOut 0.3s;
+}
+
+.timer-cont {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: aqua;
+    font-size: 0.8rem;
+}
+
+.filter-cont {
+    position: absolute;
+    top: calc((100vh - 16rem) / 2);
+    left: 5rem;
+    height: 16rem;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 5;
+}
+
+.filter {
+    height: 100%;
+    background-image: url("https://picsum.photos/seed/picsum/200/300");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+}
+
+.orange {
+    background-color: #ffa60080;
+}
+.red {
+    background-color: #ff000054;
+}
+
+.blue {
+    background-color: #0000ff6e;
+}
+
+.filter-layer {
+    position: absolute;
+    inset: 0;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    color: white;
+    font-size: 3rem !important;
+}
+.gallery {
+    position: absolute;
+    bottom: 2rem;
+    right: 11rem;
+    z-index: 5;
+}
+.backDiv {
+    width: 5rem !important;
+    height: 5rem !important;
+    border-radius: 50%;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+}
+.back {
+    color: white;
+    font-size: 1.2rem;
+    text-transform: capitalize !important;
+    user-select: none;
+}
+
+.gallery-cont {
+    width: 100vw;
+    height: 100vh;
+    background-color: #cbe0e7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    overflow-y: auto;
+}
+
+.media-cont {
+    height: 15rem;
+    width: 15rem;
+    border: 10px solid white;
+    background-color: lightcoral;
+}
+
+.media {
+    height: calc(100% - 4rem);
+    background-color: orchid;
+}
+
+.media > * {
+    width: 100%;
+    height: 100%;
+}
+
+.download,
+.delete {
+    height: 2rem;
+    color: white;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.download {
+    background-color: black;
+}
+.delete {
+    background-color: rgba(255, 0, 0, 0.486);
+}
+
+@keyframes zoomInZoomOut {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 1.2;
+    }
+}
